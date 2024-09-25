@@ -1,0 +1,21 @@
+{
+  "name": "cf-dispatch-local-fetch-bug",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dispatch": "npx -y wrangler@dispatch-namespaces-dev dev --config src/workers/dispatch/wrangler.toml --port 8001 -e local --ip \"*\"",
+    "content": "npx -y wrangler@dispatch-namespaces-dev dev --config src/workers/content/wrangler.toml --port 8002 -e local --ip \"*\" --dispatch-namespace \"local\"",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "test": "vitest",
+    "cf-typegen": "wrangler types"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.2",
+    "@cloudflare/workers-types": "^4.20240924.0",
+    "typescript": "^5.5.2",
+    "vitest": "2.0.5",
+    "wrangler": "^3.60.3"
+  }
+}
