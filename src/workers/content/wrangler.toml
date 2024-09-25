@@ -4,6 +4,9 @@ main = "./index.ts"
 compatibility_date = "2024-09-24"
 compatibility_flags = ["nodejs_compat"]
 
+[dev]
+host = "0.0.0.0"
+
 [env.local]
 name = "content-worker"
 routes = []
